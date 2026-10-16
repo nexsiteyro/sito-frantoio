@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frantoio Oleario Cocchiarale. Dal 1985 trasformiamo le migliori olive della Basilicata in olio extravergine di oliva di qualità.">
+    <meta name="theme-color" content="#637c2e">
+
+    <title>Frantoio Oleario Cocchiarale | Olio Extravergine Lucano</title>
+
+    <!-- GOOGLE FONTS (YESEVA ONE + MONTSERRAT) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- GSAP & SCROLLTRIGGER CDN (ANIMAZIONI PROFESSIONALI) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PRELOADER ANIMATO CON LOGO -->
+<div class="preloader">
+    <div class="preloader-logo">
+        <img src="img/logo.png" alt="Frantoio Oleario Cocchiarale" onerror="this.style.display='none'">
+    </div>
+    <div class="loader-line"></div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="#home" class="nav-logo" aria-label="Frantoio Oleario Cocchiarale">
+            <img src="img/logo.png" alt="Frantoio Oleario Cocchiarale" onerror="this.src='https://via.placeholder.com/150x50?text=Cocchiarale'">
+        </a>
+
+        <!-- MENU -->
+        <nav class="nav-menu">
+            <a href="#storia">La nostra storia</a>
+            <a href="#pietre">Molazze in Pietra</a>
+            <a href="#impianto">Il frantoio</a>
+            <a href="#processo">La molitura</a>
+            <a href="#territorio">Il territorio</a>
+            <a href="#contatti" class="nav-contact">Contattaci</a>
+        </nav>
+
+        <!-- MOBILE BUTTON -->
+        <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-background"></div>
+
+    <div class="hero-content">
+        <div class="hero-label">
+            <span></span> Dal 1985 · Basilicata
+        </div>
+        <h1>Dove la tradizione incontra <em>l'innovazione.</em></h1>
+        <p>Da oltre quarant'anni trasformiamo le olive del territorio lucano in olio extravergine di oliva, unendo cultura olearia, esperienza familiare e tecnologia.</p>
+        <div class="hero-buttons">
+            <a href="#storia" class="btn btn-primary">Scopri il frantoio <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="#contatti" class="btn btn-outline">Prenota la molitura</a>
+        </div>
+    </div>
+
+    <div class="hero-bottom">
+        <div class="hero-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                Castronuovo di Sant'Andrea
+                <small>Provincia di Potenza · Basilicata</small>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            SCORRI <span class="scroll-line"></span>
+        </div>
+    </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+    <div class="container">
+        <div class="intro-grid">
+            <div class="intro-title reveal">
+                <span class="eyebrow">La nostra identità</span>
+                <h2>Un frantoio <em>lucano.</em></h2>
+            </div>
+            <div class="intro-text reveal">
+                <p>Il Frantoio Oleario Cocchiarale nasce nel cuore di Castronuovo di Sant'Andrea, in un territorio dove l'olivo rappresenta da generazioni cultura, lavoro e tradizione.</p>
+                <a href="#storia" class="text-link">Conosci la nostra storia <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat reveal">
+                <strong class="counter">1985</strong>
+                <span>L'anno in cui nasce la nostra storia</span>
+            </div>
+            <div class="stat reveal">
+                <strong class="counter">40+</strong>
+                <span>Anni di esperienza nel settore oleario</span>
+            </div>
+            <div class="stat reveal">
+                <strong class="counter">2018</strong>
+                <span>Ammodernamento impianto a ciclo continuo</span>
+            </div>
+            <div class="stat reveal">
+                <strong class="counter">&lt;27°C</strong>
+                <span>Estrazione a freddo controllata</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STORIA -->
+<section id="storia" class="story-section">
+    <div class="container">
+        <div class="section-heading light reveal">
+            <span class="eyebrow">Eredità · Famiglia · Territorio</span>
+            <h2>Una storia nata <em>tra gli ulivi.</em></h2>
+        </div>
+
+        <div class="story-grid">
+            <div class="story-image reveal">
+                <div class="image-frame">
+                    <img src="img/frantoio.jpg" alt="Frantoio Oleario Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Frantoio+Cocchiarale'">
+                    <span class="image-number">01</span>
+                </div>
+            </div>
+
+            <div class="story-content reveal">
+                <span class="story-year">DAL 1985</span>
+                <h3>Una passione tramandata nel tempo.</h3>
+                <p>La nostra avventura nasce nella metà degli anni '80 a Castronuovo di Sant'Andrea, in un luogo storicamente conosciuto nel dialetto locale come <strong>"trappiti"</strong>.</p>
+                <p>Era questa la zona del paese destinata agli antichi frantoi del borgo. Proprio nei locali adiacenti all'antico mulino venne installato il primo impianto molitorio.</p>
+                <p>Con il passare degli anni l'attività si è consolidata sotto la guida di <strong>Angelo e Sinforosa</strong>, affiancati dalla famiglia.</p>
+                <p>La tradizione è rimasta il nostro punto di partenza, mentre l'innovazione tecnologica ci ha permesso di migliorare continuamente il modo in cui lavoriamo la materia prima.</p>
+
+                <div class="signature">
+                    <span>Una famiglia · Una passione</span>
+                    <strong>Cocchiarale</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MOLAZZE IN PIETRA DI GRANITO (VIDEO) -->
+<section id="pietre" class="pietre-section">
+    <div class="container">
+        <div class="section-heading reveal">
+            <span class="eyebrow">Metodo Tradizionale</span>
+            <h2>La Frangitura con <em>Molazze in Pietra.</em></h2>
+            <p>La storia del nostro frantoio affonda le sue radici nella frangitura tradizionale eseguita mediante imponenti ruote in pietra di granito, note in ambito professionale come <strong>molazze</strong>.</p>
+        </div>
+
+        <div class="pietre-grid">
+            <div class="pietre-content reveal">
+                <h3>Spremitura Dolce e Delicata</h3>
+                <p>Le molazze in pietra di granito esercitano una pressione soffice e graduale sulle olive, frantumando la polpa senza lacerare eccessivamente il nocciolo. Questo metodo tradizionale evita il surriscaldamento della pasta durante la prima fase di frangitura, preservando intatti gli aromi più sottili, la dolcezza e i profumi naturali dell'oliva appena raccolta.</p>
+                
+                <div class="pietre-features">
+                    <div class="p-feature">
+                        <i class="fa-solid fa-gem"></i>
+                        <div>
+                            <h4>Pietra di Granito Puro</h4>
+                            <p>Materiale inerte ed ecologico che garantisce la massima igiene e non altera il sapore originale dell'olio.</p>
+                        </div>
+                    </div>
+                    <div class="p-feature">
+                        <i class="fa-solid fa-leaf"></i>
+                        <div>
+                            <h4>Rispetto del Frutto</h4>
+                            <p>Azione meccanica lenta che evita lo stress termico e l'ossidazione precoce della pasta d'olive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pietre-image reveal">
+                <div class="image-frame">
+                    <video autoplay loop muted playsinline poster="img/molazze-pietra.jpg">
+                        <source src="img/molazze-pietra.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                    <span class="image-label">TRADIZIONE OLEARIA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMPIANTO: DECANTER RAPANALLI E SEPARATORE PIERALISI -->
+<section id="impianto" class="machine-section">
+    <div class="container">
+        <div class="machine-header reveal">
+            <span class="eyebrow">Tecnologia dal 2018</span>
+            <h2>Decanter Rapanelli & Separatore Pieralisi</h2>
+            <p>Nel 2018 abbiamo ammodernato l'impianto con un sistema integrale a ciclo continuo che combina l'affidabilità del <strong>Decanter Rapanelli</strong> con la separazione finale del <strong>Separatore Pieralisi</strong>.</p>
+        </div>
+
+        <div class="machine-gallery">
+            <div class="machine-gallery-card reveal">
+                <div class="machine-img-box">
+                    <img src="img/decanter-rapanelli.jpg" alt="Decanter Rapanelli Frantoio Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/600x450?text=Decanter+Rapanelli'">
+                </div>
+                <div class="machine-card-info">
+                    <span class="badge-tech">PRIMA ESTRAZIONE</span>
+                    <h3>Decanter Rapanelli</h3>
+                    <p>Esegue la prima estrazione e separazione centrifuga della pasta di olive dividendo olio, sansa e acqua di vegetazione, mantenendo costantemente la temperatura sotto i 27°C.</p>
+                </div>
+            </div>
+
+            <div class="machine-gallery-card reveal">
+                <div class="machine-img-box">
+                    <img src="img/separatore-pieralisi.jpg" alt="Separatore Pieralisi Frantoio Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/600x450?text=Separatore+Pieralisi'">
+                </div>
+                <div class="machine-card-info">
+                    <span class="badge-tech">SEPARAZIONE FINALE</span>
+                    <h3>Separatore Pieralisi</h3>
+                    <p>Affina e centrifuga le ultime micro-gocce d'acqua di vegetazione per restituire un olio extravergine limpido, fluido, denso e privo di qualsiasi impurità.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="machine-specs-grid reveal">
+            <div class="spec-box">
+                <i class="fa-solid fa-temperature-arrow-down"></i>
+                <h4>Estrazione a Freddo (&lt;27°C)</h4>
+                <p>Temperatura sotto controllo per proteggere polifenoli, vitamina E e note aromatiche.</p>
+            </div>
+            <div class="spec-box">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h4>Conto Terzi Separato</h4>
+                <p>Lavorazione rigorosamente separata per ogni agricoltore con la massima trasparenza.</p>
+            </div>
+            <div class="spec-box">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>Acciaio Inox Aisi 304</h4>
+                <p>Massima igiene alimentare in ogni fase del contatto con il prodotto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESSO -->
+<section id="processo" class="process-section">
+    <div class="container">
+        <div class="section-heading reveal">
+            <span class="eyebrow">Dall'oliva all'olio</span>
+            <h2>Il nostro metodo di <em>molitura.</em></h2>
+            <p>Ogni fase della lavorazione è importante. Dalla ricezione delle olive alla separazione finale, il nostro obiettivo è preservare la qualità della materia prima.</p>
+        </div>
+
+        <div class="process-timeline">
+            <article class="process-item reveal">
+                <div class="process-number">01</div>
+                <div>
+                    <span>Prima fase</span>
+                    <h3>Defogliazione e lavaggio</h3>
+                    <p>Le olive vengono private delle foglie e sottoposte a lavaggio per eliminare terra e impurità presenti sulla superficie.</p>
+                </div>
+            </article>
+            <article class="process-item reveal">
+                <div class="process-number">02</div>
+                <div>
+                    <span>Seconda fase</span>
+                    <h3>Frangitura e Molatura</h3>
+                    <p>La frangitura meccanica o tramite molazze in pietra rompe la struttura dell'oliva preparando la pasta alla successiva fase.</p>
+                </div>
+            </article>
+            <article class="process-item reveal">
+                <div class="process-number">03</div>
+                <div>
+                    <span>Terza fase</span>
+                    <h3>Gramolazione</h3>
+                    <p>La pasta viene lavorata lentamente a temperatura controllata, mantenendo le condizioni necessarie per preservare profumi e caratteristiche dell'oliva.</p>
+                </div>
+            </article>
+            <article class="process-item reveal">
+                <div class="process-number">04</div>
+                <div>
+                    <span>Quarta fase</span>
+                    <h3>Estrazione (Decanter Rapanelli)</h3>
+                    <p>Il decanter Rapanelli separa le diverse componenti della pasta attraverso un processo centrifugo continuo a freddo.</p>
+                </div>
+            </article>
+            <article class="process-item reveal">
+                <div class="process-number">05</div>
+                <div>
+                    <span>Quinta fase</span>
+                    <h3>Separazione finale (Pieralisi)</h3>
+                    <p>L'olio viene sottoposto al passaggio finale nel separatore Pieralisi per ottenere un prodotto limpido, puro e pronto da gustare.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- OLIO HERO BANNER -->
+<section class="oil-section">
+    <div class="container">
+        <div class="oil-content reveal">
+            <span class="eyebrow">Il risultato</span>
+            <h2>Tutto il carattere della <em>Basilicata.</em></h2>
+            <p>Un olio nasce prima di tutto dalla qualità delle olive. La nostra lavorazione punta a valorizzare le caratteristiche del territorio, rispettando profumi, aromi e identità della materia prima.</p>
+            <a href="#territorio" class="btn btn-light">Scopri il territorio <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- TERRITORIO -->
+<section id="territorio" class="territory-section">
+    <div class="container">
+        <div class="territory-grid">
+            <div class="territory-content reveal">
+                <span class="eyebrow">Territorio & biodiversità</span>
+                <h2>Le olive della nostra <em>terra.</em></h2>
+                <p>La Basilicata custodisce un patrimonio olivicolo ricco e variegato. Nel nostro frantoio lavoriamo principalmente olive provenienti dal territorio lucano, valorizzando le diverse cultivar e le loro caratteristiche.</p>
+                <p>Ogni varietà porta con sé un profilo differente, legato al territorio, alla stagione e al modo in cui viene coltivata e raccolta.</p>
+            </div>
+
+            <div class="cultivar-list">
+                <article class="cultivar-item reveal">
+                    <span>01</span>
+                    <div>
+                        <h3>Ogliarola del Vulture</h3>
+                        <p>Una delle cultivar più rappresentative dell'olivicoltura lucana.</p>
+                    </div>
+                </article>
+                <article class="cultivar-item reveal">
+                    <span>02</span>
+                    <div>
+                        <h3>Majatica di Ferrandina</h3>
+                        <p>Una varietà storicamente legata al territorio della Basilicata.</p>
+                    </div>
+                </article>
+                <article class="cultivar-item reveal">
+                    <span>03</span>
+                    <div>
+                        <h3>Leccino</h3>
+                        <p>Cultivar diffusa e apprezzata per la sua versatilità.</p>
+                    </div>
+                </article>
+                <article class="cultivar-item reveal">
+                    <span>04</span>
+                    <div>
+                        <h3>Frantoio</h3>
+                        <p>Una delle varietà più conosciute dell'olivicoltura italiana.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTO TERZI -->
+<section class="service-section">
+    <div class="container">
+        <div class="service-box">
+            <div class="service-content reveal">
+                <span class="eyebrow">Servizio dedicato</span>
+                <h2>La tua oliva. Il tuo <em>olio.</em></h2>
+                <p>Offriamo il servizio di molitura conto terzi per produttori e agricoltori. La lavorazione viene gestita con attenzione alla materia prima e nel rispetto delle esigenze di ogni produttore.</p>
+                <a href="#contatti" class="btn btn-light">Prenota la molitura <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <i class="fa-solid fa-leaf service-decoration"></i>
+        </div>
+    </div>
+</section>
+
+<!-- VALORI -->
+<section class="values-section">
+    <div class="container">
+        <div class="section-heading center reveal">
+            <span class="eyebrow">I nostri valori</span>
+            <h2>Quattro principi. <em>Una sola filosofia.</em></h2>
+            <p>Il nostro modo di lavorare nasce dall'equilibrio tra esperienza, tecnologia e rispetto per il territorio.</p>
+        </div>
+
+        <div class="values-grid">
+            <article class="value-card reveal">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Tradizione</h3>
+                <p>Una storia familiare costruita nel tempo e profondamente legata alla cultura olearia lucana.</p>
+            </article>
+            <article class="value-card reveal">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Tecnologia</h3>
+                <p>Decanter Rapanelli e Separatore Pieralisi per una lavorazione accurata.</p>
+            </article>
+            <article class="value-card reveal">
+                <i class="fa-solid fa-temperature-low"></i>
+                <h3>Qualità</h3>
+                <p>Temperatura controllata sotto i 27°C per preservare al meglio le virtù nutrizionali.</p>
+            </article>
+            <article class="value-card reveal">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h3>Territorio</h3>
+                <p>Valorizziamo le olive e le cultivar che raccontano la nostra terra.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="cta-section">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <span class="eyebrow">Contatti</span>
+            <h2>Portaci le tue olive.</h2>
+            <p>Contattaci per informazioni sulla molitura, sul servizio conto terzi o per conoscere meglio il nostro frantoio.</p>
+            <div class="cta-buttons">
+                <a href="tel:+393471252575" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 347 125 2575</a>
+                <a href="https://wa.me/393471252575" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
+                <a href="mailto:frantoio.cocchiarale@libero.it" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="img/logo.png" alt="Frantoio Oleario Cocchiarale" onerror="this.style.display='none'">
+                <p>Dal 1985, tradizione familiare e innovazione tecnologica al servizio dell'olio extravergine lucano.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navigazione</h4>
+                <a href="#home">Home</a>
+                <a href="#storia">La nostra storia</a>
+                <a href="#pietre">Molazze in pietra</a>
+                <a href="#impianto">Il frantoio</a>
+                <a href="#processo">La molitura</a>
+                <a href="#territorio">Il territorio</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contatti</h4>
+                <span>Via Garibaldi 61</span>
+                <span>85030 Castronuovo di Sant'Andrea</span>
+                <span>Potenza · Basilicata</span>
+                <a href="tel:+393471252575">347 125 2575</a>
+                <a href="mailto:frantoio.cocchiarale@libero.it">frantoio.cocchiarale@libero.it</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Seguici</h4>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Frantoio Oleario Cocchiarale. Tutti i diritti riservati.</span>
+            <span>Castronuovo di Sant'Andrea · PZ</span>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
