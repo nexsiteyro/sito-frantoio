@@ -2,7 +2,6 @@
    FRANTOIO OLEARIO COCCHIARALE - STYLE.CSS
 ========================================================= */
 
-/* RESET & BASE */
 * {
     margin: 0;
     padding: 0;
@@ -42,12 +41,11 @@ button {
     font-family: inherit;
 }
 
-/* PALETTE COLORI & TIPOGRAFIA */
 :root {
-    --olive-light: #97a322;   /* Verde oliva vivo / Accento */
-    --forest-green: #637c2e;  /* Verde bosco / Brand primario */
-    --dark-main: #1c2018;     /* Verde scurissimo / Testi e footer */
-    --bg-cream: #fcfbe8;      /* Sfondo caldo */
+    --olive-light: #97a322;
+    --forest-green: #637c2e;
+    --dark-main: #1c2018;
+    --bg-cream: #fcfbe8;
     --border-color: rgba(99, 124, 46, 0.25);
 
     --font-heading: 'Yeseva One', serif;
@@ -63,7 +61,7 @@ button {
     z-index: 2;
 }
 
-/* PRELOADER STILIZZATO (OTTIMIZZATO PER PNG TRASPARENTE) */
+/* PRELOADER */
 .preloader {
     position: fixed;
     inset: 0;
@@ -73,13 +71,15 @@ button {
     align-items: center;
     justify-content: center;
     background: var(--bg-cream);
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .preloader-logo {
@@ -117,7 +117,7 @@ button {
     100% { transform: scaleX(0); transform-origin: right; }
 }
 
-/* NAVBAR & LOGO PNG TRASPARENTE */
+/* NAVBAR */
 .navbar {
     position: fixed;
     top: 0;
@@ -144,11 +144,6 @@ button {
     justify-content: space-between;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-}
-
 .nav-logo img {
     width: 120px;
     height: auto;
@@ -163,7 +158,7 @@ button {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     font-size: 13px;
     font-weight: 600;
 }
@@ -180,7 +175,7 @@ button {
     color: var(--bg-cream);
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     position: relative;
     z-index: 2;
@@ -298,7 +293,6 @@ button {
     color: var(--bg-cream);
 }
 
-/* HERO BOTTOM */
 .hero-bottom {
     position: absolute;
     bottom: 30px;
@@ -333,7 +327,6 @@ button {
     color: rgba(252, 251, 232, 0.7);
 }
 
-/* SEZIONI GENERICHE */
 section {
     position: relative;
     z-index: 2;
@@ -358,12 +351,15 @@ section {
     font-weight: 400;
 }
 
+.section-heading.center {
+    text-align: center;
+}
+
 .section-heading h2 em, .intro-title h2 em, .machine-header h2 em, .territory-content h2 em {
     color: var(--olive-light);
     font-style: normal;
 }
 
-/* INTRO & STATS */
 .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -417,7 +413,10 @@ section {
 
 .story-image img {
     height: 500px;
+    width: 100%;
     object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
 
 .image-frame {
@@ -435,8 +434,8 @@ section {
 
 .story-content h3 {
     font-family: var(--font-heading);
-    font-size: 30px;
-    margin: 20px 0;
+    font-size: 26px;
+    margin: 20px 0 10px 0;
     color: var(--bg-cream);
     font-weight: 400;
 }
@@ -447,18 +446,69 @@ section {
     font-size: 15px;
 }
 
-.signature {
-    margin-top: 30px;
+/* PLAYER VIDEO MANUALE */
+.video-player-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
 }
 
-.signature strong {
-    font-family: var(--font-heading);
-    color: var(--olive-light);
-    font-size: 22px;
-    font-weight: 400;
+.video-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    transition: opacity 0.4s ease;
 }
 
-/* MOLAZZE IN PIETRA (VIDEO AFFIANCATO) */
+.video-player-container video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    background: rgba(99, 124, 46, 0.9);
+    color: var(--bg-cream);
+    border: 2px solid var(--bg-cream);
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+    z-index: 3;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: var(--olive-light);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-player-container.playing .video-poster,
+.video-player-container.playing .play-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MOLAZZE IN PIETRA */
 .pietre-section {
     background: var(--bg-cream);
 }
@@ -542,9 +592,10 @@ section {
     font-size: 10px;
     letter-spacing: 2px;
     backdrop-filter: blur(8px);
+    z-index: 4;
 }
 
-/* IMPIANTO CON DECANTER + SEPARATORE */
+/* IMPIANTO */
 .machine-section {
     background: rgba(99, 124, 46, 0.08);
 }
@@ -759,7 +810,104 @@ section {
     font-weight: 400;
 }
 
-/* FOOTER LOGO PNG */
+/* FAQ ACCORDION */
+.faq-section {
+    background: rgba(99, 124, 46, 0.05);
+    padding: 90px 0;
+}
+
+.faq-accordion {
+    max-width: 850px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--bg-cream);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--forest-green);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question i {
+    font-size: 14px;
+    color: var(--olive-light);
+    transition: transform 0.4s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+    padding: 0 25px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 25px 20px 25px;
+}
+
+.faq-answer p {
+    color: #5e6654;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-answer a {
+    color: var(--forest-green);
+    text-decoration: underline;
+}
+
+/* CONTATTI */
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.business-card-box {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(28, 32, 24, 0.12);
+    border: 2px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.business-card-box:hover {
+    transform: translateY(-5px);
+}
+
+.business-card-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* FOOTER */
 .footer {
     background: var(--dark-main);
     color: var(--bg-cream);
@@ -801,14 +949,16 @@ section {
     color: rgba(252, 251, 232, 0.5);
 }
 
-/* REVEAL PER ANIMAZIONI */
+/* REVEAL ANIMAZIONI */
 .reveal {
     opacity: 0;
-    will-change: opacity, transform;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.active {
-    opacity: 1;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* RESPONSIVE MOBILE */
@@ -824,6 +974,15 @@ section {
     width: 25px;
     height: 2px;
     background: var(--forest-green);
+}
+
+@media (min-width: 901px) {
+    .story-grid-reverse {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
 }
 
 @media (max-width: 900px) {
@@ -848,7 +1007,7 @@ section {
         right: 0;
     }
 
-    .intro-grid, .story-grid, .pietre-grid, .machine-gallery, .territory-grid, .values-grid, .footer-grid, .machine-specs-grid {
+    .intro-grid, .story-grid, .pietre-grid, .machine-gallery, .territory-grid, .values-grid, .footer-grid, .machine-specs-grid, .cta-grid {
         grid-template-columns: 1fr;
     }
 }
