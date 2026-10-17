@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Nasconde il preloader quando la pagina carica o dopo massimo 1.5 secondi
     window.addEventListener("load", hidePreloader);
     setTimeout(hidePreloader, 1500);
 
@@ -93,7 +92,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* --- 6. ANIMAZIONI DI SCORRIMENTO (REVEAL) --- */
+    /* --- 6. ANIMAZIONE CONTATORE NUMERI (STATS) --- */
+    const counters = document.querySelectorAll(".counter");
+    let animated = false;
+
+    const animateCounters = () => {
+        const statsSection = document.querySelector(".stats-grid");
+        if (!statsSection || animated) return;
+
+        const sectionTop = statsSection.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight * 0.85;
+
+        if (sectionTop < triggerPoint) {
+            animated = true; // Esegue l'animazione solo una volta
+
+            counters.forEach(counter => {
+                const targetText = counter.innerText.trim();
+                
+                // Estrae solo la parte numerica principale
+                let targetNum = parseInt(targetText.replace(/\D/g, ""));
+                let prefix = targetText.startsWith("<") ? "<" : "";
+                let suffix = targetText.includes("+") ? "+" : (targetText.includes("°C") ? "°C" : "");
+
+                if (isNaN(targetNum)) return;
+
+                let startNum = 0;
+                let duration = 2000; // 2 secondi
+                let stepTime = 20;
+                let totalSteps = duration / stepTime;
+                let increment = targetNum / totalSteps;
+                let currentNum = startNum;
+
+                const timer = setInterval(() => {
+                    currentNum += increment;
+                    if (currentNum >= targetNum) {
+                        counter.innerText = prefix + targetNum + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = prefix + Math.floor(currentNum) + suffix;
+                    }
+                }, stepTime);
+            });
+        }
+    };
+
+    /* --- 7. ANIMAZIONI DI SCORRIMENTO (REVEAL) --- */
     const reveals = document.querySelectorAll(".reveal");
     const checkReveals = () => {
         const triggerBottom = window.innerHeight * 0.85;
@@ -103,6 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 el.classList.add("active");
             }
         });
+
+        // Avvia anche il controllo dei numeri durante lo scroll
+        animateCounters();
     };
 
     window.addEventListener("scroll", checkReveals);
