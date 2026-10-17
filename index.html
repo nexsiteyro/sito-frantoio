@@ -9,7 +9,7 @@
 
     <title>Frantoio Oleario Cocchiarale | Olio Extravergine Lucano</title>
 
-    <!-- GOOGLE FONTS (YESEVA ONE + MONTSERRAT) -->
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- GSAP & SCROLLTRIGGER CDN (ANIMAZIONI PROFESSIONALI) -->
+    <!-- GSAP & SCROLLTRIGGER CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -27,8 +27,8 @@
 
 <body>
 
-<!-- PRELOADER ANIMATO CON LOGO -->
-<div class="preloader">
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
     <div class="preloader-logo">
         <img src="img/logo.png" alt="Frantoio Oleario Cocchiarale" onerror="this.style.display='none'">
     </div>
@@ -38,22 +38,20 @@
 <!-- NAVBAR -->
 <header class="navbar">
     <div class="nav-container">
-        <!-- LOGO -->
         <a href="#home" class="nav-logo" aria-label="Frantoio Oleario Cocchiarale">
             <img src="img/logo.png" alt="Frantoio Oleario Cocchiarale" onerror="this.src='https://via.placeholder.com/150x50?text=Cocchiarale'">
         </a>
 
-        <!-- MENU -->
         <nav class="nav-menu">
             <a href="#storia">La nostra storia</a>
             <a href="#pietre">Molazze in Pietra</a>
             <a href="#impianto">Il frantoio</a>
             <a href="#processo">La molitura</a>
             <a href="#territorio">Il territorio</a>
+            <a href="#faq">FAQ</a>
             <a href="#contatti" class="nav-contact">Contattaci</a>
         </nav>
 
-        <!-- MOBILE BUTTON -->
         <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -70,7 +68,7 @@
 
     <div class="hero-content">
         <div class="hero-label">
-            <span></span> Dal 1985 · Basilicata
+            <span></span> Dal 1985 
         </div>
         <h1>Dove la tradizione incontra <em>l'innovazione.</em></h1>
         <p>Da oltre quarant'anni trasformiamo le olive del territorio lucano in olio extravergine di oliva, unendo cultura olearia, esperienza familiare e tecnologia.</p>
@@ -134,35 +132,73 @@
     <div class="container">
         <div class="section-heading light reveal">
             <span class="eyebrow">Eredità · Famiglia · Territorio</span>
-            <h2>Una storia nata <em>tra gli ulivi.</em></h2>
+            <h2>La nostra <em>storia.</em></h2>
+            <p style="color: rgba(252, 251, 232, 0.9); font-size: 18px; margin-top: 10px;">Dal 1985, una tradizione di famiglia legata alla terra lucana</p>
         </div>
 
+        <!-- PRIMO BLOCCO: VIDEO MANUALE -->
         <div class="story-grid">
             <div class="story-image reveal">
-                <div class="image-frame">
-                    <img src="img/frantoio.jpg" alt="Frantoio Oleario Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Frantoio+Cocchiarale'">
-                    <span class="image-number">01</span>
+                <div class="image-frame video-player-container" id="videoContainer">
+                    <img src="img/vecchio-impianto.jpg" alt="Copertina Vecchio Impianto Frantoio Cocchiarale" class="video-poster" id="videoPoster" onerror="this.src='https://via.placeholder.com/600x800?text=Vecchio+Impianto'">
+                    
+                    <video id="vecchioVideo" playsinline preload="none">
+                        <source src="img/vecchio-impianto.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+
+                    <button class="play-btn" id="playBtn" aria-label="Riproduci video del vecchio impianto">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <span class="image-label">IL PRIMO FRANTOIO</span>
                 </div>
             </div>
 
             <div class="story-content reveal">
                 <span class="story-year">DAL 1985</span>
-                <h3>Una passione tramandata nel tempo.</h3>
-                <p>La nostra avventura nasce nella metà degli anni '80 a Castronuovo di Sant'Andrea, in un luogo storicamente conosciuto nel dialetto locale come <strong>"trappiti"</strong>.</p>
-                <p>Era questa la zona del paese destinata agli antichi frantoi del borgo. Proprio nei locali adiacenti all'antico mulino venne installato il primo impianto molitorio.</p>
-                <p>Con il passare degli anni l'attività si è consolidata sotto la guida di <strong>Angelo e Sinforosa</strong>, affiancati dalla famiglia.</p>
-                <p>La tradizione è rimasta il nostro punto di partenza, mentre l'innovazione tecnologica ci ha permesso di migliorare continuamente il modo in cui lavoriamo la materia prima.</p>
+                <h3>Le origini: un mugnaio, un paese e una nuova sfida</h3>
+                <p>La storia del Frantoio Oleario Cocchiarale nasce nel 1985, a Castronuovo di Sant’Andrea, nel cuore della Basilicata. È qui che il signor Giovanni Salvatore Allegretti, mugnaio del paese, decide di intraprendere una nuova sfida: dedicarsi alla lavorazione delle olive e alla produzione dell’olio.</p>
+                <p>Negli spazi adiacenti al mulino installa il suo primo frantoio oleario, proprio in una zona del borgo conosciuta in dialetto come “Trappiti”, termine legato alla presenza degli antichi frantoi. Una scelta che racconta già il profondo legame tra questa attività, la storia del paese e una cultura agricola tramandata nel tempo.</p>
+                <p>È da qui che tutto ha inizio: da un’intuizione, dal lavoro quotidiano e dalla volontà di valorizzare uno dei prodotti più rappresentativi del territorio lucano.</p>
 
-                <div class="signature">
-                    <span>Una famiglia · Una passione</span>
-                    <strong>Cocchiarale</strong>
+                <h3 style="margin-top: 35px;">Una famiglia, una passione condivisa</h3>
+                <p>Fin dai primi anni, il frantoio si sviluppa come un’autentica realtà familiare. Accanto a Giovanni lavorano la moglie, Anna Maria Di Salvo, e i figli Angelo e Vincenzo, che partecipano attivamente alla gestione dell’attività e alla lavorazione delle olive.</p>
+                <p>Esperienza dopo esperienza, la famiglia consolida le proprie competenze, costruisce un rapporto di fiducia con i clienti e fa crescere il frantoio, mantenendo al centro l'attenzione per la materia prima e la cura di ogni fase della lavorazione.</p>
+                <p>Il lavoro non è soltanto un'attività produttiva, ma un impegno condiviso, fatto di responsabilità, conoscenza e rispetto per le tradizioni del territorio.</p>
+            </div>
+        </div>
+
+        <!-- SECONDO BLOCCO: PASSAGGIO GENERAZIONALE -->
+        <div class="story-grid story-grid-reverse" style="margin-top: 80px;">
+            <div class="story-content reveal">
+                <h3>Il passaggio generazionale: nasce il Frantoio Cocchiarale</h3>
+                <p>Nel 2000 si apre un nuovo capitolo della storia familiare. Angelo Allegretti sposa Sinforosa Cocchiarale e, mentre il fratello Vincenzo intraprende un diverso percorso professionale, Angelo e Sinforosa iniziano a occuparsi direttamente della gestione del frantoio, inizialmente con il supporto degli altri familiari.</p>
+                <p>Con il passare degli anni, la coppia assume la guida definitiva dell'attività, dando continuità al lavoro iniziato nel 1985 e imprimendo al frantoio una nuova identità.</p>
+                <p>Nasce così il Frantoio Oleario Cocchiarale: un nome che segna una nuova fase della storia aziendale, senza interrompere il filo che unisce le diverse generazioni della famiglia.</p>
+                <p>Le radici restano le stesse, così come l'impegno verso i clienti e il territorio. Cambia il nome, ma rimane intatta la volontà di portare avanti un mestiere che richiede esperienza, dedizione e attenzione.</p>
+
+                <h3 style="margin-top: 35px;">Innovazione e tradizione: crescere senza dimenticare le origini</h3>
+                <p>Nel corso degli anni, il Frantoio Cocchiarale intraprende un percorso di costante ammodernamento, investendo in nuovi macchinari e nell'evoluzione delle tecnologie di lavorazione.</p>
+                <p>L'innovazione diventa uno strumento per migliorare l'efficienza dei processi e curare ogni fase della trasformazione delle olive, senza perdere il valore delle conoscenze maturate nel tempo.</p>
+                <p>La filosofia rimane quella delle origini: unire l'esperienza della tradizione alle possibilità offerte dalla tecnologia, con l'obiettivo di preservare le caratteristiche della materia prima e ottenere un olio extravergine di oliva di qualità.</p>
+
+                <h3 style="margin-top: 35px;">Le nostre radici e il futuro</h3>
+                <p>Il Frantoio Oleario Cocchiarale continua la propria attività a Castronuovo di Sant'Andrea, in Via Garibaldi. Dal primo frantoio del 1985 a oggi, la storia è fatta di famiglia, lavoro e passione per l'olio. Una storia che continua con lo sguardo rivolto al futuro e le radici ben salde nella propria terra.</p>
+            </div>
+
+            <div class="story-image reveal">
+                <div class="image-frame">
+                    <img src="img/frantoio-storia-2.jpg" alt="Evoluzione Frantoio Oleario Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Storia+Cocchiarale'">
+                    <span class="image-label">NUOVO IMPIANTO A CICLO CONTINUO</span>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- MOLAZZE IN PIETRA DI GRANITO (VIDEO) -->
+<!-- MOLAZZE IN PIETRA DI GRANITO -->
 <section id="pietre" class="pietre-section">
     <div class="container">
         <div class="section-heading reveal">
@@ -174,7 +210,9 @@
         <div class="pietre-grid">
             <div class="pietre-content reveal">
                 <h3>Spremitura Dolce e Delicata</h3>
-                <p>Le molazze in pietra di granito esercitano una pressione soffice e graduale sulle olive, frantumando la polpa senza lacerare eccessivamente il nocciolo. Questo metodo tradizionale evita il surriscaldamento della pasta durante la prima fase di frangitura, preservando intatti gli aromi più sottili, la dolcezza e i profumi naturali dell'oliva appena raccolta.</p>
+                <p>La lavorazione delle olive richiede attenzione, esperienza e tecnologie adeguate in ogni fase del processo. Le molazze in pietra di granito esercitano una pressione graduale sulle olive, contribuendo alla frantumazione della polpa e alla formazione della pasta olearia. Questo metodo tradizionale, se correttamente gestito, consente di lavorare la materia prima con delicatezza, limitando il riscaldamento e preservando le caratteristiche organolettiche delle olive.</p>
+                <p>La lavorazione prosegue nel frangitore Pieralisi, dove le olive vengono ulteriormente frantumate fino a ottenere una pasta omogenea, pronta per le successive fasi di estrazione dell'olio.</p>
+                <p>L'incontro tra tradizione e tecnologia permette di valorizzare la materia prima e di accompagnare ogni fase della lavorazione con la massima cura.</p>
                 
                 <div class="pietre-features">
                     <div class="p-feature">
@@ -207,7 +245,7 @@
     </div>
 </section>
 
-<!-- IMPIANTO: DECANTER RAPANALLI E SEPARATORE PIERALISI -->
+<!-- IMPIANTO -->
 <section id="impianto" class="machine-section">
     <div class="container">
         <div class="machine-header reveal">
@@ -314,7 +352,7 @@
     </div>
 </section>
 
-<!-- OLIO HERO BANNER -->
+<!-- BANNER OLIO -->
 <section class="oil-section">
     <div class="container">
         <div class="oil-content reveal">
@@ -420,17 +458,96 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="section-heading center reveal">
+            <span class="eyebrow">Informazioni Utili</span>
+            <h2>Domande <em>Frequenti.</em></h2>
+            <p>Le risposte alle domande più comuni sulla nostra attività e sui servizi di molitura.</p>
+        </div>
+
+        <div class="faq-accordion reveal">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quando apre il frantoio per la nuova stagione olearia?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>La data ufficiale di apertura e l'avvio delle attività di molitura vengono annunciati ogni anno sui nostri canali social ufficiali (Facebook e Instagram). Vi invitiamo a seguirci per rimanere aggiornati in tempo reale.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>In quali modalità viene effettuata la lavorazione delle olive?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Il Frantoio Oleario Cocchiarale effettua esclusivamente il servizio di molitura conto terzi. Ogni partita di olive viene lavorata in maniera rigorosamente separata per garantire a ciascun produttore l'estrazione del proprio olio extravergine.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Come posso prenotare il mio turno di molitura?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Per la prenotazione diretta del turno di molitura è possibile contattarci telefonicamente al numero <a href="tel:+393471252575"><strong>347 125 2575</strong></a>. Il contatto telefonico è riservato esclusivamente alle prenotazioni della molitura.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Come posso richiedere informazioni generali o commerciali?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Per qualsiasi richiesta di informazione generale, chiarimenti sui servizi o comunicazioni commerciali, vi invitiamo a scriverci tramite le nostre pagine social ufficiali (Facebook e Instagram) o via e-mail all'indirizzo <a href="mailto:frantoiococchiarale@libero.it"><strong>frantoiococchiarale@libero.it</strong></a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Quali sono i consigli per il conferimento delle olive in frantoio?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Per garantire una corretta conservazione delle olive e preservare la qualità dell'olio, il Frantoio Oleario Cocchiarale non accetta olive conferite in sacchi. È obbligatorio utilizzare cassette rigide e forate, che consentano un'adeguata aerazione ed evitino accumuli di calore e umidità. Consigliamo inoltre di conferire le olive il prima possibile dopo la raccolta, preferibilmente entro 24–48 ore, per limitare il deterioramento dei frutti e favorire una lavorazione ottimale.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Come devo attrezzarmi per il ritiro dell'olio appena estratto?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>È necessario che il produttore sia munito di contenitori idonei al contatto alimentare, preferibilmente recipienti o fusti in acciaio inox perfettamente puliti ed asciutti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONTATTI -->
 <section id="contatti" class="cta-section">
     <div class="container">
-        <div class="cta-inner reveal">
-            <span class="eyebrow">Contatti</span>
-            <h2>Portaci le tue olive.</h2>
-            <p>Contattaci per informazioni sulla molitura, sul servizio conto terzi o per conoscere meglio il nostro frantoio.</p>
-            <div class="cta-buttons">
-                <a href="tel:+393471252575" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 347 125 2575</a>
-                <a href="https://wa.me/393471252575" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark"><i class="fa-brands fa-whatsapp"></i> Scrivici su WhatsApp</a>
-                <a href="mailto:frantoio.cocchiarale@libero.it" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Email</a>
+        <div class="cta-grid reveal">
+            <div class="cta-inner">
+                <span class="eyebrow">Contatti</span>
+                <h2>Portaci le tue olive.</h2>
+                <p>Contattaci telefonicamente esclusivamente per la prenotazione della molitura. Per informazioni generali, orari e curiosità siamo sempre disponibili sui social ed e-mail.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+393471252575" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Solo Prenotazione Molitura</a>
+                    <a href="https://wa.me/393471252575" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:frantoiococchiarale@libero.it" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Email</a>
+                </div>
+            </div>
+
+            <div class="business-card-box">
+                <img src="img/biglietto-da-visita.jpg" alt="Biglietto da Visita Frantoio Oleario Cocchiarale" loading="lazy" onerror="this.src='https://via.placeholder.com/500x300?text=Biglietto+da+Visita'">
             </div>
         </div>
     </div>
@@ -455,6 +572,7 @@
                 <a href="#impianto">Il frantoio</a>
                 <a href="#processo">La molitura</a>
                 <a href="#territorio">Il territorio</a>
+                <a href="#faq">FAQ</a>
             </div>
 
             <div class="footer-column">
@@ -463,14 +581,14 @@
                 <span>85030 Castronuovo di Sant'Andrea</span>
                 <span>Potenza · Basilicata</span>
                 <a href="tel:+393471252575">347 125 2575</a>
-                <a href="mailto:frantoio.cocchiarale@libero.it">frantoio.cocchiarale@libero.it</a>
+                <a href="mailto:frantoiococchiarale@libero.it">frantoiococchiarale@libero.it</a>
             </div>
 
             <div class="footer-column">
                 <h4>Seguici</h4>
                 <div class="socials">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1FTLenPDJo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/frantoiococchiarale?srtk=MWo4c25idTB1ZGpzeQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
